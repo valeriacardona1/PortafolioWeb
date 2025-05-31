@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio personal de Valeria Cardona Granada - Contabilidad y Finanzas. Experticia en exógenas y análisis de datos.">
+    <title>Valeria Cardona Granada | Contabilidad y Finanzas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Azul oscuro */
+            --secondary-color: #34495e; /* Gris azulado */
+            --accent-color: #2ecc71; /* Verde esmeralda */
+            --text-color: #ecf0f1; /* Gris claro para texto en oscuro */
+            --light-text-color: #34495e; /* Texto para fondos claros */
+            --background-dark: #233140;
+            --background-light: #f4f7f6;
+            --border-radius: 8px;
+            --transition-speed: 0.3s ease-in-out;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--light-text-color);
+            background-color: var(--background-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 2rem; }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--background-dark);
+            color: var(--text-color);
+        }
+        section:nth-of-type(even) h2,
+        section:nth-of-type(even) h3 {
+            color: var(--accent-color);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background-color: var(--text-color);
+            margin-bottom: 5px;
+            border-radius: 2px;
+            transition: all var(--transition-speed);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(35, 49, 64, 0.7), rgba(35, 49, 64, 0.7)), url('images/hero-background.jpg') no-repeat center center/cover;
+            color: var(--text-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            color: var(--text-color);
+        }
+
+        .hero-content h2 {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
+        }
+
+        .hero-buttons .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            margin: 0 0.8rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all var(--transition-speed);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .hero-buttons .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .hero-buttons .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        .hero-buttons .btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 2px solid var(--text-color);
+        }
+
+        .hero-buttons .btn-secondary:hover {
+            background-color: var(--text-color);
+            color: var(--primary-color);
+        }
+
+        /* About Me Section */
+        #about .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 300px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform var(--transition-speed);
+        }
+
+        .about-image img:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-content {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .about-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background-color: rgba(255,255,255,0.05); /* Ligeramente más claro en fondo oscuro */
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform var(--transition-speed);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(46, 204, 113, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category ul li {
+            background-color: rgba(44, 62, 80, 0.7); /* Para contraste con texto */
+            padding: 0.7rem 1.2rem;
+            margin-bottom: 0.8rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 400;
+            color: var(--text-color);
+            transition: background-color var(--transition-speed);
+        }
+
+        .skill-category ul li:hover {
+            background-color: var(--primary-color);
+        }
+
+        .skill-level {
+            font-size: 0.9em;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Experience & Education Section */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: var(--accent-color);
+            border: 4px solid var(--background-dark);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-left {
+            left: 0;
+        }
+
+        .timeline-right {
+            left: 50%;
+        }
+
+        .timeline-left::after {
+            right: -17px;
+        }
+
+        .timeline-right::after {
+            left: -17px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: rgba(255,255,255,0.05);
+            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform var(--transition-speed);
+        }
+        
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+        }
+
+        .timeline-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+        }
+
+        .timeline-content .date {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--background-dark);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform var(--transition-speed);
+            color: var(--text-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.7rem;
+        }
+
+        .project-info p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 2rem auto;
+            background-color: var(--primary-color);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-align: left;
+            color: var(--text-color);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            background-color: var(--background-dark);
+            color: var(--text-color);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color var(--transition-speed);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all var(--transition-speed);
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .contact-form button:hover {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            background-color: var(--background-dark);
+            padding: 1.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 280px;
+            text-align: center;
+            color: var(--text-color);
+            transition: transform var(--transition-speed);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item h3 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-item p {
+            font-size: 1rem;
+        }
+        
+        .contact-item a {
+            color: var(--text-color);
+            text-decoration: underline;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                right: 2rem;
+                top: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .hero-buttons .btn {
+                padding: 0.8rem 1.8rem;
+                margin: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            #about .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                margin-bottom: 2rem;
+            }
+
+            .timeline::before {
+                left: 18px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 20px;
+            }
+
+            .timeline-left::after,
+            .timeline-right::after {
+                left: 10px;
+            }
+
+            .timeline-right {
+                left: 0%;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+            .contact-form button {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.7rem; }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content h2 {
+                font-size: 1.3rem;
+            }
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .hero-buttons .btn {
+                width: 80%;
+                margin: 0.5rem auto;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Valeria C.G.</div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#education">Educación</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>[El arte de las exógenas]</h1>
+                <h2>Valeria Cardona Granada</h2>
+                <h3>Contabilidad y Finanzas</h3>
+                <p>Te explicaremos todo lo relacionado con las exógenas y sus componentes, te explicaremos para qué sirve cada formato que se debe presentar.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Mis Proyectos</a>
+                    <a href="cv/Valeria_Cardona_Granada_CV.pdf" download class="btn btn-secondary">Descargar CV</a>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section id="about" class="container">
+            <h2>Sobre Mí</h2>
+            <div class="about-image">
+                <img src="images/mi-foto.jpg" alt="Foto de Valeria Cardona Granada">
+            </div>
+            <div class="about-content">
+                <p>Mi historia profesional comienza con una profunda curiosidad por los números y su significado. Desde muy joven, me sentí atraída por la lógica y la precisión que ofrece el mundo de la contabilidad y las finanzas. A lo largo de mi carrera, he cultivado una pasión por desentrañar la complejidad de los datos financieros, transformándolos en información clara y accionable que impulsa decisiones estratégicas.</p>
+                <p>Mis valores fundamentales son la integridad, la excelencia y la colaboración. Creo firmemente que la honestidad y la ética son la base de cualquier relación profesional exitosa. Me esfuerzo por alcanzar la excelencia en cada tarea, siempre buscando optimizar procesos y superar expectativas. Disfruto trabajando en equipo, compartiendo conocimientos y aprendiendo de mis colegas, ya que juntos podemos lograr mucho más.</p>
+                <p>Entre mis principales fortalezas se encuentran el análisis detallado, la capacidad de resolución de problemas complejos y una comunicación efectiva. Me siento particularmente realizada al identificar desafíos financieros y desarrollar soluciones innovadoras que generen valor. Mi objetivo a corto plazo es profundizar mi especialización en análisis de datos financieros y a mediano plazo, liderar equipos que gestionen proyectos de optimización contable.</p>
+                <p>Disfruto enormemente resolviendo problemas, especialmente cuando se trata de identificar ineficiencias o de encontrar oportunidades de mejora en los sistemas financieros. Mi contribución en el campo de la contabilidad y finanzas se centra en aportar claridad, eficiencia y una perspectiva estratégica que ayude a las organizaciones a prosperar.</p>
+            </div>
+        </section>
+
+        ---
+
+        <section id="skills" class="container">
+            <h2>Mis Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Habilidades Técnicas</h3>
+                    <ul>
+                        <li>Análisis y comprensión de datos <span class="skill-level">Avanzado</span></li>
+                        <li>Contabilidad General <span class="skill-level">Avanzado</span></li>
+                        <li>Manejo de Software Contable (ej. SAP, SIESA) <span class="skill-level">Intermedio</span></li>
+                        <li>Elaboración de Estados Financieros <span class="skill-level">Avanzado</span></li>
+                        <li>Normas Internacionales de Información Financiera (NIIF) <span class="skill-level">Intermedio</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Habilidades Blandas</h3>
+                    <ul>
+                        <li>Comunicación efectiva <span class="skill-level">Avanzado</span></li>
+                        <li>Trabajo en equipo <span class="skill-level">Avanzado</span></li>
+                        <li>Resolución de problemas complejos <span class="skill-level">Avanzado</span></li>
+                        <li>Liderazgo <span class="skill-level">Intermedio</span></li>
+                        <li>Adaptabilidad <span class="skill-level">Avanzado</span></li>
+                        <li>Pensamiento Crítico <span class="skill-level">Avanzado</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section id="experience" class="container">
+            <h2>Experiencia Profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>Contador Público</h3>
+                        <p><strong>Escuela de Automovilismo F1</strong></p>
+                        <span class="date">02 02 2024 – Actualidad</span>
+                        <p>Gestión integral de la contabilidad, análisis de datos financieros y preparación de informes fiscales.</p>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        ---
+
+        <section id="education" class="container">
+            <h2>Educación</h2>
+            <div class="timeline">
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>Valeria Cardona Granada Contadora Pública</h3>
+                        <p><strong>Politécnico Superior</strong></p>
+                        <span class="date">2023 – 2025</span>
+                        <p>Formación académica completa en contabilidad y finanzas, con énfasis en normativas y análisis.</p>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        ---
+
+        <section id="projects" class="container">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/proyecto1.jpg" alt="Exógenas">
+                    <div class="project-info">
+                        <h3>Exógena y sus Formatos</h3>
+                        <p>Proyecto dedicado a la comprensión y explicación detallada de la exógena y los formatos obligatorios a presentar ante las entidades correspondientes.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/proyecto2.jpg" alt="Análisis de Datos Financieros">
+                    <div class="project-info">
+                        <h3>Análisis de Datos Financieros para PYMES</h3>
+                        <p>Desarrollo de un sistema simplificado para el análisis de flujos de caja y rentabilidad, ayudando a pequeñas y medianas empresas a tomar mejores decisiones.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/proyecto3.jpg" alt="Optimización Contable">
+                    <div class="project-info">
+                        <h3>Implementación de Estrategias de Optimización Contable</h3>
+                        <p>Propuesta y ejecución de mejoras en procesos contables internos, resultando en una reducción del tiempo de cierre de estados financieros.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section id="contact" class="container">
+            <h2>Hablemos</h2>
+            <p>Estoy disponible para nuevas oportunidades y colaboraciones. ¡No dudes en contactarme!</p>
+
+            <form class="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Asunto (opcional):</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:valeriacg851@gmail.com">valeriacg851@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Teléfono</h3>
+                    <p>3117011306</p>
+                </div>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/valeria-cardona-granada" target="_blank" rel="noopener noreferrer">Valeria Cardona Granada</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/valeriacardona1" target="_blank" rel="noopener noreferrer">valeriacardona1</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Valeria Cardona Granada. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-links');
+
+            // Toggle mobile menu
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - (document.querySelector('.header').offsetHeight), // Adjust for fixed header
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Highlight active navigation link on scroll
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - (document.querySelector('.header').offsetHeight + 50); // Offset for header + buffer
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Simple scroll animation for sections
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // When 10% of the item is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    } else {
+                        // Optional: Reset for re-animation on scroll up/down
+                        entry.target.style.opacity = '0';
+                        entry.target.style.transform = 'translateY(20px)';
+                    }
+                });
+            }, observerOptions);
+
+            // Apply initial styles for animation (hidden below viewport)
+            sections.forEach(section => {
+                if (section.id !== 'hero') { // Hero section is always visible
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                    section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                    observer.observe(section);
+                }
+            });
+
+            // For project cards and skill categories as well
+            document.querySelectorAll('.project-card, .skill-category, .timeline-item, .contact-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
